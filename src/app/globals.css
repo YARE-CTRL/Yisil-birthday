@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #090a16;
+  --foreground: #f8fafc;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.font-serif-title {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
+/* Glassmorphism Styles - Realistic Glass with Edge Highlights */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-gold {
+  background: rgba(251, 191, 36, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(251, 191, 36, 0.15);
+  border-top: 1px solid rgba(251, 191, 36, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(251, 191, 36, 0.2);
+}
+
+.glass-card-rose {
+  background: rgba(244, 114, 182, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(244, 114, 182, 0.15);
+  border-top: 1px solid rgba(244, 114, 182, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(244, 114, 182, 0.2);
+}
+
+/* Glow Utilities */
+.text-glow-gold {
+  text-shadow: 0 0 15px rgba(251, 191, 36, 0.6), 0 0 30px rgba(251, 191, 36, 0.3);
+}
+
+.text-glow-rose {
+  text-shadow: 0 0 15px rgba(244, 114, 182, 0.6), 0 0 30px rgba(244, 114, 182, 0.3);
+}
+
+/* Candle Flame Animations */
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px #fbbf24) drop-shadow(0 0 16px #f59e0b);
+  }
+  25% {
+    transform: scale(1.08) rotate(1deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px #fbbf24) drop-shadow(0 0 20px #f59e0b);
+  }
+  50% {
+    transform: scale(0.95) rotate(-2deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 6px #fbbf24) drop-shadow(0 0 12px #ef4444);
+  }
+  75% {
+    transform: scale(1.05) rotate(2deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 10px #fbbf24) drop-shadow(0 0 18px #f59e0b);
+  }
+}
+
+.animate-flame {
+  animation: flicker 1.8s infinite ease-in-out alternate;
+}
+
+/* Floating Lantern Animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-400px) rotate(4deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-800px) rotate(-4deg);
+    opacity: 0;
+  }
+}
+
+.animate-lantern-rise {
+  animation: floatUp 12s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090a16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(251, 191, 36, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 191, 36, 0.6);
+}
